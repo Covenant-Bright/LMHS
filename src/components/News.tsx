@@ -13,20 +13,19 @@ export default function News() {
   const [modalImageError, setModalImageError] = useState(false)
 
   const newsItems = [
-   {
-  image: "/images/slide1.webp",
-  alt: "Enroll Today",
-  title: "Now Enrolling for 2025/2026 Academic Session!",
-  description: "Miracle Intl School Spotlight",
-  fullContent: `Enrollment for the 2025/2026 academic session is officially open! Give your child the advantage of a world-class education at Miracle International School. Our modern facilities, dedicated educators, and well-rounded curriculum ensure not just academic success but also character growth, creativity, and confidence for the future.`
-}
-,
-{
-  image: "/images/IMG_3709.webp",
-  alt: "School Resumes",
-  title: "School Resumes on 15th September 2025",
-  description: "Miracle Intl School Spotlight",
-  fullContent: `Mark your calendars! The new academic year begins on Monday, September 15th, 2025. All students are expected to resume by 7:45 AM for our traditional welcome assembly, where we will share important updates for the term.
+    {
+      image: "/images/slide1.webp",
+      alt: "Enroll Today",
+      title: "Now Enrolling for 2025/2026 Academic Session!",
+      description: "Miracle Intl School Spotlight",
+      fullContent: `Enrollment for the 2025/2026 academic session is officially open! Give your child the advantage of a world-class education at Miracle International School. Our modern facilities, dedicated educators, and well-rounded curriculum ensure not just academic success but also character growth, creativity, and confidence for the future.`
+    },
+    {
+      image: "/images/IMG_3709.webp",
+      alt: "School Resumes",
+      title: "School Resumes on 15th September 2025",
+      description: "Miracle Intl School Spotlight",
+      fullContent: `Mark your calendars! The new academic year begins on Monday, September 15th, 2025. All students are expected to resume by 7:45 AM for our traditional welcome assembly, where we will share important updates for the term.
 
 Key Information:
 - Uniform schedule remains unchanged.
@@ -35,7 +34,7 @@ Key Information:
 - School fees would be paid via the school portal.
 
 We look forward to welcoming all students back for another exciting and productive school year!`
-},
+    },
     {
       image: "/images/IMG_3736.webp",
       alt: "Summer Coaching",
@@ -44,8 +43,7 @@ We look forward to welcoming all students back for another exciting and producti
       fullContent: `Beat the summer slump with our intensive academic enrichment program starting August 11th, 2025. Our summer coaching sessions are designed to help students:
 - Strengthen core academic skills
 - Prepare for advanced coursework
-- Develop effective study techniques
-`
+- Develop effective study techniques`
     },
   ]
 
@@ -79,9 +77,15 @@ We look forward to welcoming all students back for another exciting and producti
     
     setModalImageError(false)
     if (direction === 'prev') {
-      setSelectedNewsIndex(prev => prev === 0 ? newsItems.length - 1 : prev - 1)
+      setSelectedNewsIndex(prev => {
+        if (prev === null) return newsItems.length - 1
+        return prev === 0 ? newsItems.length - 1 : prev - 1
+      })
     } else {
-      setSelectedNewsIndex(prev => prev === newsItems.length - 1 ? 0 : prev + 1)
+      setSelectedNewsIndex(prev => {
+        if (prev === null) return 0
+        return prev === newsItems.length - 1 ? 0 : prev + 1
+      })
     }
   }
 
