@@ -186,12 +186,12 @@ export default function Footer() {
             <h3 className="font-bold mb-4 uppercase tracking-wide">Portals</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/students-portal" className="link-underline">
+                <a href="/student-portal" className="link-underline">
                   Student Portal
                 </a>
               </li>
               <li>
-                <a href="teachers-portal" className="link-underline">
+                <a href="teacher-portal" className="link-underline">
                   Teachers Portal
                 </a>
               </li>

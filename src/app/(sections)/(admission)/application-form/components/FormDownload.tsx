@@ -43,7 +43,7 @@ const forms: {
     subtitle: "Application Form",
     description: "Complete application form for admission to Miracle International School",
     features: [
-      "Prparatory to Primary levels",
+      "Preparatory to Primary levels",
       "All branch locations",
       "Academic year 2025/2026",
       "Fillable PDF format",
